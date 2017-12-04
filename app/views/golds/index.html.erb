@@ -1,0 +1,56 @@
+<div id="wrapper">
+    <div id="top">
+        <h1>Your gold: <%= @gold %></h1>
+    </div>
+    <div id="mid">
+        <div class="options">
+            <h2>Farm</h2>
+            <br>
+            <p>(earns 10 - 20 golds)</p>
+            <br>
+            <form method="post" action="/farm">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <input type="submit" value="FIND GOLD">
+            </form>
+        </div>
+        <div class="options">
+            <h2>House</h2>
+            <br>
+            <p>(earns 10 - 20 golds)</p>
+            <br>
+            <form method="post" action="/house">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <input type="submit" value="FIND GOLD">
+            </form>
+        </div>
+        <div class="options">
+            <h2>Cave</h2>
+            <br>
+            <p>(earns 10 - 20 golds)</p>
+            <br>
+            <form method="post" action="/cave">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <input type="submit" value="FIND GOLD">
+            </form>
+        </div>
+        <div class="options">
+            <h2>Casino</h2>
+            <br>
+            <p>(earns 10 - 20 golds)</p>
+            <br>
+            <form method="post" action="/casino">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <input type="submit" value="FIND GOLD">
+            </form>
+        </div>
+    </div>
+    <div id="bot">
+        <div id="out">
+            <% @history.each do |record|%>
+                <p style="color: <%= record['color'] %>">
+                    <%= record['message'] %>
+                </p>
+            <% end %>
+        </div>
+    </div>
+</div>
